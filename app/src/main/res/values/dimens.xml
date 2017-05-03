@@ -8,4 +8,6 @@
     <dimen name="space_xlarge">32dp</dimen>
     <dimen name="space_xxlarge">56dp</dimen>
 
+    <dimen name="list_card_elevation">4dp</dimen>
+
 </resources>
