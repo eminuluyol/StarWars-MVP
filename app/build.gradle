@@ -14,8 +14,14 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            zipAlignEnabled true
+        }
+
         release {
-            minifyEnabled false
+            shrinkResources false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -51,4 +57,6 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
     testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.8'
 }
