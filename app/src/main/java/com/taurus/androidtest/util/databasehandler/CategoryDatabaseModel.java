@@ -3,7 +3,7 @@ package com.taurus.androidtest.util.databasehandler;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.taurus.androidtest.network.model.Category;
+import com.taurus.androidtest.network.model.category.Category;
 import com.taurus.androidtest.util.ListConverter;
 
 import java.util.List;

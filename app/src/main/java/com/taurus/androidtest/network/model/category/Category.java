@@ -1,4 +1,4 @@
-package com.taurus.androidtest.network.model;
+package com.taurus.androidtest.network.model.category;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
