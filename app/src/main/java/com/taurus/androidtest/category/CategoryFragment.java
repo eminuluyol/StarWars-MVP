@@ -108,13 +108,13 @@ public class CategoryFragment extends BaseFragment<CategoryView, CategoryPresent
         switch (category.getType()) {
 
             case CATEGORY_MOVIES:
-                getPresenter().onMovieListRequested();
+                getPresenter().onMovieListRequested(category.getType());
                 break;
             case CATEGORY_PLANETS:
-                getPresenter().onPlanetListRequested();
+                getPresenter().onPlanetListRequested(category.getType());
                 break;
             case CATEGORY_CHARACTERS:
-                getPresenter().onCharacterListRequested();
+                getPresenter().onCharacterListRequested(category.getType());
                 break;
 
         }

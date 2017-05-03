@@ -30,6 +30,13 @@
             android:name=".category.CategoryActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".categorydetail.CategoryDetailActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".category.CategoryActivity" />
+        </activity>
 
     </application>
 
