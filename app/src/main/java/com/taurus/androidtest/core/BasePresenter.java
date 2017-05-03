@@ -2,7 +2,7 @@ package com.taurus.androidtest.core;
 
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.taurus.androidtest.network.StarWarsApi;
-import com.taurus.androidtest.util.Navigator;
+import com.taurus.androidtest.util.navigation.Navigator;
 import com.taurus.androidtest.util.databasehandler.StarWarsDatabaseHandler;
 
 import javax.inject.Inject;

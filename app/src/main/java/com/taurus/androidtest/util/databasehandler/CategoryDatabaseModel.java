@@ -1,11 +1,14 @@
 package com.taurus.androidtest.util.databasehandler;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.taurus.androidtest.network.model.Category;
 import com.taurus.androidtest.util.ListConverter;
 
 import java.util.List;
 
-public class CategoryDatabaseModel {
+public class CategoryDatabaseModel implements Parcelable{
 
     private int id;
     private String categoryName;
@@ -63,4 +66,35 @@ public class CategoryDatabaseModel {
         this.type = type;
     }
 
+
+    protected CategoryDatabaseModel(Parcel in) {
+        id = in.readInt();
+        categoryName = in.readString();
+        type = in.readInt();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(categoryName);
+        parcel.writeInt(type);
+    }
+
+    public static final Creator<CategoryDatabaseModel> CREATOR = new Creator<CategoryDatabaseModel>() {
+        @Override
+        public CategoryDatabaseModel createFromParcel(Parcel in) {
+            return new CategoryDatabaseModel(in);
+        }
+
+        @Override
+        public CategoryDatabaseModel[] newArray(int size) {
+            return new CategoryDatabaseModel[size];
+        }
+    };
 }

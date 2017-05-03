@@ -4,11 +4,17 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.core.BaseFragment;
 
+import butterknife.BindView;
+
 public class SplashFragment extends BaseFragment<SplashView, SplashPresenter> implements SplashView {
+
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
 
     public static SplashFragment newInstance() {
         return new SplashFragment();
@@ -29,7 +35,22 @@ public class SplashFragment extends BaseFragment<SplashView, SplashPresenter> im
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        getPresenter().onProgressBarShow();
         getPresenter().onCategoryListRequested();
+
+    }
+
+    @Override
+    public void showLoading() {
+
+        progressBar.setVisibility(View.VISIBLE);
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+        progressBar.setVisibility(View.GONE);
 
     }
 }

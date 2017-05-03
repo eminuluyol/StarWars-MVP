@@ -2,7 +2,7 @@ package com.taurus.androidtest.core.injection;
 
 import android.support.v7.app.AppCompatActivity;
 
-import com.taurus.androidtest.util.Navigator;
+import com.taurus.androidtest.util.navigation.Navigator;
 
 import dagger.Module;
 import dagger.Provides;

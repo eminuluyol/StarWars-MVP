@@ -15,6 +15,22 @@ public class SplashPresenter extends BasePresenter<SplashView> {
         Injector.getInstance().getActivityComponent().inject(this);
     }
 
+    void onProgressBarShow() {
+
+        if(isViewAttached()) {
+
+            getView().showLoading();
+        }
+    }
+
+    void onProgressBarHide() {
+
+        if(isViewAttached()) {
+
+            getView().hideLoading();
+        }
+    }
+
     void onCategoryListRequested() {
 
         compositeDisposable.add(getApi().getStarWarsCategories()
@@ -33,9 +49,19 @@ public class SplashPresenter extends BasePresenter<SplashView> {
 
         }
 
-        List<CategoryDatabaseModel> list = getDatabaseHandler().getAllCategoriesOrderByName();
+        onCategoryActivityRequested(getDatabaseHandler().getAllCategoriesOrderByName());
+
     }
 
     private void handleError(Throwable throwable) {
+
+        onProgressBarHide();
+    }
+
+    void onCategoryActivityRequested(List<CategoryDatabaseModel> categories) {
+
+        onProgressBarHide();
+        getNavigator().toCategoryActivity(categories).clearBackStack().navigate();
+
     }
 }
