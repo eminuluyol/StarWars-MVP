@@ -1,6 +1,7 @@
 package com.taurus.androidtest.core;
 
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
+import com.taurus.androidtest.network.StarWarsApi;
 import com.taurus.androidtest.util.Navigator;
 
 import javax.inject.Inject;
@@ -12,8 +13,8 @@ public abstract class BasePresenter<V extends BaseView> extends MvpBasePresenter
     @Inject
     Navigator navigator;
 
-//    @Inject
-//    MarvelHeroesApi api;
+    @Inject
+    StarWarsApi api;
 
     protected CompositeDisposable compositeDisposable;
 
@@ -25,9 +26,9 @@ public abstract class BasePresenter<V extends BaseView> extends MvpBasePresenter
         return navigator;
     }
 
-//    public MarvelHeroesApi getApi() {
-//        return api;
-//    }
+    public StarWarsApi getApi() {
+        return api;
+    }
 
     public void clearCompositeDisposable() {
 

@@ -28,5 +28,8 @@ public class SplashFragment extends BaseFragment<SplashView, SplashPresenter> im
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        getPresenter().onCategoryListRequested();
+
     }
 }

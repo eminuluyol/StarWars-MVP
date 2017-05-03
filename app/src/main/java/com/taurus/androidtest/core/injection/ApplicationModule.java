@@ -2,6 +2,9 @@ package com.taurus.androidtest.core.injection;
 
 import android.app.Application;
 
+import com.taurus.androidtest.network.StarWarsApi;
+import com.taurus.androidtest.network.retrofit.RetrofitStarWarsApi;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -22,10 +25,10 @@ public class ApplicationModule {
         return application;
     }
 
-//    @Provides
-//    @Singleton
-//    public MarvelHeroesApi provideMalagaFCApi() {
-//        return new RetrofitMarvelHeroesApi();
-//    }
+    @Provides
+    @Singleton
+    public StarWarsApi provideStarWarsApi() {
+        return new RetrofitStarWarsApi();
+    }
 
 }

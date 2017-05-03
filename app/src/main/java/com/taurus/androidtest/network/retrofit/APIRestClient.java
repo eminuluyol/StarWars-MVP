@@ -2,6 +2,7 @@ package com.taurus.androidtest.network.retrofit;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,13 +13,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIRestClient {
 
+    private static final String BASE_URL = "https://private-anon-a07d4565c1-mobgentestcode.apiary-mock.com";
     private static final int CONNECT_TIME_OUT = 10;
     private static final int READ_TIME_OUT = 15;
 
     public APIRestClient() {
     }
 
-    static synchronized Retrofit getInstanceRx(String baseUrl) {
+    static synchronized Retrofit getInstanceRx() {
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BASIC);
@@ -35,11 +37,12 @@ public class APIRestClient {
                 .build();
 
         return new Retrofit.Builder()
-                .baseUrl(baseUrl)
+                .baseUrl(BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)
                 .build();
 
     }
+
 }
