@@ -3,6 +3,7 @@ package com.taurus.androidtest.category;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.NestedScrollView;
 import android.view.View;
 
 import com.taurus.androidtest.R;
@@ -12,10 +13,15 @@ import com.taurus.androidtest.util.databasehandler.CategoryDatabaseModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+
 public class CategoryFragment extends BaseFragment<CategoryView, CategoryPresenter> implements CategoryView {
 
     private static final String EXTRA_CATEGORY = "category";
     private List<CategoryDatabaseModel> categories;
+
+    @BindView(R.id.emptyView)
+    NestedScrollView emptyView;
 
     public static CategoryFragment newInstance(List<CategoryDatabaseModel> categories) {
 
@@ -59,4 +65,16 @@ public class CategoryFragment extends BaseFragment<CategoryView, CategoryPresent
         if (args == null) return;
         categories = args.getParcelableArrayList(CategoryFragment.EXTRA_CATEGORY);
     }
+
+    @Override
+    public void showEmptyView() {
+        emptyView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideEmptyView() {
+        emptyView.setVisibility(View.GONE);
+    }
+
+
 }
