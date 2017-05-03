@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hannesdorfmann.fragmentargs.FragmentArgs;
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
 import com.taurus.androidtest.R;
+import com.taurus.androidtest.core.dialog.ProgressDialogFragment;
 
 import butterknife.ButterKnife;
 
