@@ -1,6 +1,7 @@
 package com.taurus.androidtest.core;
 
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
+import com.taurus.androidtest.util.Navigator;
 
 import javax.inject.Inject;
 

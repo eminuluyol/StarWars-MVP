@@ -14,6 +14,7 @@ import com.hannesdorfmann.fragmentargs.FragmentArgs;
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.core.dialog.ProgressDialogFragment;
+import com.taurus.androidtest.core.dialog.ProgressDialogFragmentBuilder;
 
 import butterknife.ButterKnife;
 

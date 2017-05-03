@@ -23,6 +23,8 @@ import android.widget.TextView;
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.core.dialog.ProgressDialogFragment;
+import com.taurus.androidtest.core.dialog.ProgressDialogFragmentBuilder;
+import com.taurus.androidtest.core.injection.Injector;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
