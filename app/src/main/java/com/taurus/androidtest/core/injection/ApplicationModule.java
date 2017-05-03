@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.taurus.androidtest.network.StarWarsApi;
 import com.taurus.androidtest.network.retrofit.RetrofitStarWarsApi;
+import com.taurus.androidtest.util.databasehandler.StarWarsDatabaseHandler;
 
 import javax.inject.Singleton;
 
@@ -29,6 +30,12 @@ public class ApplicationModule {
     @Singleton
     public StarWarsApi provideStarWarsApi() {
         return new RetrofitStarWarsApi();
+    }
+
+    @Provides
+    @Singleton
+    public StarWarsDatabaseHandler provideStarWarsDatabaseHandler() {
+        return new StarWarsDatabaseHandler(application);
     }
 
 }

@@ -3,6 +3,7 @@ package com.taurus.androidtest.core;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.taurus.androidtest.network.StarWarsApi;
 import com.taurus.androidtest.util.Navigator;
+import com.taurus.androidtest.util.databasehandler.StarWarsDatabaseHandler;
 
 import javax.inject.Inject;
 
@@ -16,6 +17,9 @@ public abstract class BasePresenter<V extends BaseView> extends MvpBasePresenter
     @Inject
     StarWarsApi api;
 
+    @Inject
+    StarWarsDatabaseHandler starWarsDatabaseHandler;
+
     protected CompositeDisposable compositeDisposable;
 
     public BasePresenter(){
@@ -28,6 +32,10 @@ public abstract class BasePresenter<V extends BaseView> extends MvpBasePresenter
 
     public StarWarsApi getApi() {
         return api;
+    }
+
+    public StarWarsDatabaseHandler getDatabaseHandler() {
+        return starWarsDatabaseHandler;
     }
 
     public void clearCompositeDisposable() {

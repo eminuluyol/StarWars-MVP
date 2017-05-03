@@ -1,7 +1,7 @@
 package com.taurus.androidtest.network.retrofit;
 
 import com.taurus.androidtest.network.StarWarsApi;
-import com.taurus.androidtest.network.retrofit.model.category.Category;
+import com.taurus.androidtest.network.model.Category;
 
 import java.util.List;
 
