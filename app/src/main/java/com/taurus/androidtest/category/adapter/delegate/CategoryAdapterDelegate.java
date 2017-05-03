@@ -33,4 +33,5 @@ public class CategoryAdapterDelegate extends BaseAdapterDelegate<CategoryUIModel
     protected void onBindViewHolder(@NonNull CategoryUIModel item, @NonNull CategoryViewHolder viewHolder, @NonNull List<Object> payloads) {
         viewHolder.bind(item);
     }
+
 }

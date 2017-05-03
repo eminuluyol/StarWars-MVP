@@ -22,26 +22,26 @@ public class RetrofitStarWarsApi implements StarWarsApi {
     }
 
     @Override
-    public Observable<List<Movie>> getStarWarsMovies(BaseRequest request) {
+    public Observable<List<Movie>> getStarWarsMovies() {
 
         APIRestEndpoints endpoints = APIRestClient.getInstanceRx().create(APIRestEndpoints.class);
-        return endpoints.getStarWarsMovies(request.getType());
+        return endpoints.getStarWarsMovies();
 
     }
 
     @Override
-    public Observable<List<Planet>> getStarWarsPlanets(BaseRequest request) {
+    public Observable<List<Planet>> getStarWarsPlanets() {
 
         APIRestEndpoints endpoints = APIRestClient.getInstanceRx().create(APIRestEndpoints.class);
-        return endpoints.getStarWarsPlanets(request.getType());
+        return endpoints.getStarWarsPlanets();
 
     }
 
     @Override
-    public Observable<List<Character>> getStarWarsCharacters(BaseRequest request) {
+    public Observable<List<Character>> getStarWarsCharacters() {
 
         APIRestEndpoints endpoints = APIRestClient.getInstanceRx().create(APIRestEndpoints.class);
-        return endpoints.getStarWarsCharacters(request.getType());
+        return endpoints.getStarWarsCharacters();
 
     }
 }

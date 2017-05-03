@@ -10,6 +10,7 @@ import com.taurus.androidtest.category.adapter.model.CategoryUIModel;
 import com.taurus.androidtest.listener.OnItemClickListener;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class CategoryViewHolder extends BaseViewHolder {
 
@@ -28,6 +29,13 @@ public class CategoryViewHolder extends BaseViewHolder {
     public void bind(CategoryUIModel categoryUIModel) {
 
         textViewCategoryName.setText(categoryUIModel.getCategoryName());
+
+    }
+
+    @OnClick(R.id.categoryItemRelativeLayoutContainer)
+    public void onCategoryClicked() {
+
+        listener.onItemClick(getAdapterPosition());
 
     }
 

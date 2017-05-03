@@ -26,6 +26,9 @@ public class CategoryFragment extends BaseFragment<CategoryView, CategoryPresent
         implements CategoryView, OnItemClickListener {
 
     private static final String EXTRA_CATEGORY = "category";
+    private static final int CATEGORY_MOVIES = 0;
+    private static final int CATEGORY_PLANETS = 1;
+    private static final int CATEGORY_CHARACTERS = 2;
 
     @BindView(R.id.categoryRecyclerView)
     RecyclerView categoryRecyclerView;
@@ -97,6 +100,24 @@ public class CategoryFragment extends BaseFragment<CategoryView, CategoryPresent
 
     @Override
     public void onItemClick(int position) {
+
+        showProgress();
+
+        CategoryUIModel category = (CategoryUIModel) categoryListAdapter.getItem(position);
+
+        switch (category.getType()) {
+
+            case CATEGORY_MOVIES:
+                getPresenter().onMovieListRequested();
+                break;
+            case CATEGORY_PLANETS:
+                getPresenter().onPlanetListRequested();
+                break;
+            case CATEGORY_CHARACTERS:
+                getPresenter().onCharacterListRequested();
+                break;
+
+        }
 
     }
 

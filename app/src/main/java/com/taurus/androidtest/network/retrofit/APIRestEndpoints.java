@@ -9,7 +9,6 @@ import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 
 public interface APIRestEndpoints {
 
@@ -17,18 +16,18 @@ public interface APIRestEndpoints {
     Observable<List<Category>> getStarWarsCategories(
     );
 
-    @GET("/list/{type}")
+    @GET("/list/1")
     Observable<List<Movie>> getStarWarsMovies(
-            @Path("type") int type
+
     );
 
-    @GET("/list/{type}")
+    @GET("/list/2")
     Observable<List<Planet>> getStarWarsPlanets(
-            @Path("type") int type
+
     );
 
-    @GET("/list/{type}")
+    @GET("/list/3")
     Observable<List<Character>> getStarWarsCharacters(
-            @Path("type") int type
+
     );
 }
