@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hannesdorfmann.fragmentargs.FragmentArgs;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseDialogFragment extends DialogFragment {
@@ -14,6 +16,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FragmentArgs.inject(this);
     }
 
     @Nullable
