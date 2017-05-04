@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.baseadapter.BaseAdapterDelegate;
 import com.taurus.androidtest.baseadapter.model.GenericItem;
-import com.taurus.androidtest.categorydetail.planet.adapter.viewholder.PlanetDetailViewHolder;
 import com.taurus.androidtest.categorydetail.planet.adapter.model.PlanetUIModel;
+import com.taurus.androidtest.categorydetail.planet.adapter.viewholder.PlanetDetailViewHolder;
 
 import java.util.List;
 
@@ -26,6 +26,6 @@ public class PlanetDetailAdapterDelegate extends BaseAdapterDelegate<PlanetUIMod
 
     @Override
     protected void onBindViewHolder(@NonNull PlanetUIModel item, @NonNull PlanetDetailViewHolder viewHolder, @NonNull List<Object> payloads) {
-
+        viewHolder.bind(item);
     }
 }

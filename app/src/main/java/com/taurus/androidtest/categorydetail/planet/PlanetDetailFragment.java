@@ -10,7 +10,7 @@ import android.view.View;
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.baseadapter.RecyclerAdapter;
 import com.taurus.androidtest.baseadapter.model.GenericItem;
-import com.taurus.androidtest.categorydetail.movie.adapter.delegate.MovieDetailAdapterDelegate;
+import com.taurus.androidtest.categorydetail.planet.adapter.delegate.PlanetDetailAdapterDelegate;
 import com.taurus.androidtest.core.BaseSimpleFragment;
 
 import java.util.ArrayList;
@@ -55,7 +55,7 @@ public class PlanetDetailFragment extends BaseSimpleFragment {
         if(detailList.size() > 0 && detailList != null) {
 
             planetsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            RecyclerAdapter planetsListAdapter = RecyclerAdapter.with(new MovieDetailAdapterDelegate());
+            RecyclerAdapter planetsListAdapter = RecyclerAdapter.with(new PlanetDetailAdapterDelegate());
             planetsRecyclerView.setAdapter(planetsListAdapter);
             planetsListAdapter.swapItems(detailList);
 

@@ -10,6 +10,15 @@
     <string name="movies_producer">Producer:</string>
     <string name="movies_release_date">Release Date:</string>
     <string name="movies_opening_crawl">Opening Crawl</string>
+    <string name="planet_name">Name</string>
+    <string name="planet_rotation_period">Rotation Period</string>
+    <string name="planet_orbital_period">Orbital Period</string>
+    <string name="planet_diameter">Diameter</string>
+    <string name="planet_climate">Climate</string>
+    <string name="planet_gravity">Gravity</string>
+    <string name="planet_region">Region</string>
+    <string name="planet_surface_water">Surface Water</string>
+    <string name="planet_population">Population</string>
 
     <!-- PLANETS DETAIL -->
 
