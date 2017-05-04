@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.baseadapter.BaseAdapterDelegate;
 import com.taurus.androidtest.baseadapter.model.GenericItem;
-import com.taurus.androidtest.categorydetail.character.adapter.viewholder.CharacterDetailViewHolder;
 import com.taurus.androidtest.categorydetail.character.adapter.model.CharacterUIModel;
+import com.taurus.androidtest.categorydetail.character.adapter.viewholder.CharacterDetailViewHolder;
 
 import java.util.List;
 
@@ -26,6 +26,6 @@ public class CharacterDetailAdapterDelegate extends BaseAdapterDelegate<Characte
 
     @Override
     protected void onBindViewHolder(@NonNull CharacterUIModel item, @NonNull CharacterDetailViewHolder viewHolder, @NonNull List<Object> payloads) {
-
+        viewHolder.bind(item);
     }
 }

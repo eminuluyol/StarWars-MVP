@@ -8,4 +8,8 @@ public class CharacterDetailPresenter extends BasePresenter<CharacterDetailView>
     CharacterDetailPresenter() {
         Injector.getInstance().getActivityComponent().inject(this);
     }
+
+    void onCharacterListRequested() {
+
+    }
 }

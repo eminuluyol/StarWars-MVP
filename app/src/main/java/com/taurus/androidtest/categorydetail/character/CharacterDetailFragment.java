@@ -4,10 +4,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.taurus.androidtest.R;
+import com.taurus.androidtest.baseadapter.RecyclerAdapter;
 import com.taurus.androidtest.baseadapter.model.GenericItem;
+import com.taurus.androidtest.categorydetail.character.adapter.delegate.CharacterDetailAdapterDelegate;
 import com.taurus.androidtest.core.BaseFragment;
 import com.taurus.androidtest.customview.EndlessRecyclerView;
 
@@ -17,17 +20,18 @@ import java.util.List;
 import butterknife.BindView;
 
 public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, CharacterDetailPresenter>
-        implements CharacterDetailView {
+        implements CharacterDetailView, EndlessRecyclerView.OnEndReachedListener {
 
     private static final String EXTRA_CATEGORY_DETAIL = "category_detail";
 
     @BindView(R.id.characterRecyclerView)
-    EndlessRecyclerView comicsRecyclerView;
+    EndlessRecyclerView charactersRecyclerView;
 
     @BindView(R.id.emptyView)
     NestedScrollView emptyView;
 
     private List<GenericItem> detailList;
+    private RecyclerAdapter charactersListAdapter;
 
     public static CharacterDetailFragment newInstance(List<GenericItem> detailList) {
 
@@ -57,6 +61,16 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
 
         getBundleFromArgs();
 
+        if(detailList.size() > 0 && detailList != null) {
+
+            charactersRecyclerView.setOnEndReachedListener(this);
+            charactersRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            charactersListAdapter = RecyclerAdapter.with(new CharacterDetailAdapterDelegate());
+            charactersRecyclerView.setAdapter(charactersListAdapter);
+            charactersListAdapter.swapItems(detailList);
+
+        }
+
     }
 
     private void getBundleFromArgs() {
@@ -77,4 +91,10 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
         emptyView.setVisibility(View.GONE);
     }
 
+    @Override
+    public void onEndReached() {
+
+        getPresenter().onCharacterListRequested();
+
+    }
 }

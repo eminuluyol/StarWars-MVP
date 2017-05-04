@@ -10,6 +10,8 @@
     <string name="movies_producer">Producer:</string>
     <string name="movies_release_date">Release Date:</string>
     <string name="movies_opening_crawl">Opening Crawl</string>
+
+    <!-- PLANETS DETAIL -->
     <string name="planet_name">Name</string>
     <string name="planet_rotation_period">Rotation Period</string>
     <string name="planet_orbital_period">Orbital Period</string>
@@ -20,6 +22,15 @@
     <string name="planet_surface_water">Surface Water</string>
     <string name="planet_population">Population</string>
 
-    <!-- PLANETS DETAIL -->
+    <!-- CHARACTER DETAIL -->
+    <string name="character_height">Height:</string>
+    <string name="character_mass">Mass:</string>
+    <string name="character_hair_color">Hair Color:</string>
+    <string name="character_skin_color">Skin Color:</string>
+    <string name="character_eye_color">Eye Color:</string>
+    <string name="character_birth_year">Birth Year:</string>
+    <string name="character_gender">Gender:</string>
+    <string name="character_name">Name:</string>
+
 
 </resources>
