@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/mipmap-xhdpi/background.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/mipmap-xhdpi/background.png"
+    }
+]

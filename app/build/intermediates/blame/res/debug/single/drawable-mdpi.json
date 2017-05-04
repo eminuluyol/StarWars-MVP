@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/drawable-mdpi/character.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/drawable-mdpi/character.png"
+    },
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/drawable-mdpi/splash.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/drawable-mdpi/splash.png"
+    },
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/drawable-mdpi/starwars.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/drawable-mdpi/starwars.png"
+    },
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/drawable-mdpi/background.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/drawable-mdpi/background.png"
+    },
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/drawable-mdpi/planet.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/drawable-mdpi/planet.png"
+    },
+    {
+        "merged": "/Users/Android/Documents/Repository/android-test2-mehmet/app/build/intermediates/res/merged/debug/drawable-mdpi/starwars_poster.png",
+        "source": "/Users/Android/Documents/Repository/android-test2-mehmet/app/src/main/res/drawable-mdpi/starwars_poster.png"
+    }
+]
