@@ -1,12 +1,15 @@
 package com.taurus.androidtest.categorydetail.planet.adapter.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.taurus.androidtest.baseadapter.model.GenericItem;
 import com.taurus.androidtest.network.model.planet.Planet;
 import com.taurus.androidtest.util.ListConverter;
 
 import java.util.List;
 
-public class PlanetUIModel extends GenericItem {
+public class PlanetUIModel extends GenericItem implements Parcelable {
 
     private String name;
 
@@ -31,6 +34,52 @@ public class PlanetUIModel extends GenericItem {
     public PlanetUIModel() {
     }
 
+    protected PlanetUIModel(Parcel in) {
+        super(in);
+        name = in.readString();
+        rotationPeriod = in.readString();
+        orbitalPeriod = in.readString();
+        diameter = in.readString();
+        climate = in.readString();
+        gravity = in.readString();
+        region = in.readString();
+        surfaceWater = in.readString();
+        population = in.readString();
+        id = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(name);
+        dest.writeString(rotationPeriod);
+        dest.writeString(orbitalPeriod);
+        dest.writeString(diameter);
+        dest.writeString(climate);
+        dest.writeString(gravity);
+        dest.writeString(region);
+        dest.writeString(surfaceWater);
+        dest.writeString(population);
+        dest.writeString(id);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<PlanetUIModel> CREATOR = new Creator<PlanetUIModel>() {
+        @Override
+        public PlanetUIModel createFromParcel(Parcel in) {
+            return new PlanetUIModel(in);
+        }
+
+        @Override
+        public PlanetUIModel[] newArray(int size) {
+            return new PlanetUIModel[size];
+        }
+    };
+
     public static List<PlanetUIModel> createList(List<Planet> planetList) {
         return ListConverter.convert(planetList, item -> create(item));
     }
@@ -39,16 +88,16 @@ public class PlanetUIModel extends GenericItem {
 
         final PlanetUIModel model = new PlanetUIModel();
 
-        model.setName(model.getName());
-        model.setRotationPeriod(model.getRotationPeriod());
-        model.setOrbitalPeriod(model.getOrbitalPeriod());
-        model.setDiameter(model.getDiameter());
-        model.setClimate(model.getClimate());
-        model.setGravity(model.getGravity());
-        model.setRegion(model.getRegion());
-        model.setSurfaceWater(model.getSurfaceWater());
-        model.setPopulation(model.getPopulation());
-        model.setId(model.getId());
+        model.setName(item.getName());
+        model.setRotationPeriod(item.getRotationPeriod());
+        model.setOrbitalPeriod(item.getOrbitalPeriod());
+        model.setDiameter(item.getDiameter());
+        model.setClimate(item.getClimate());
+        model.setGravity(item.getGravity());
+        model.setRegion(item.getRegion());
+        model.setSurfaceWater(item.getSurfaceWater());
+        model.setPopulation(item.getPopulation());
+        model.setId(item.getId());
 
         return model;
     }
@@ -131,5 +180,10 @@ public class PlanetUIModel extends GenericItem {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public int getItemRecognitionFiled() {
+        return Integer.parseInt(id);
     }
 }

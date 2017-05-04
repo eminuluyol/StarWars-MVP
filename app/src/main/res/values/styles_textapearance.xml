@@ -15,6 +15,14 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
+    <style name="TextStyle.14.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextStyle.14.Black.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextStyle.14.Black54">
         <item name="android:textColor">@color/black54</item>
     </style>

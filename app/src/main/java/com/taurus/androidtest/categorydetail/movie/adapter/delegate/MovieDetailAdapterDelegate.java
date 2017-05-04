@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.baseadapter.BaseAdapterDelegate;
 import com.taurus.androidtest.baseadapter.model.GenericItem;
-import com.taurus.androidtest.categorydetail.movie.adapter.viewholder.MovieDetailViewHolder;
 import com.taurus.androidtest.categorydetail.movie.adapter.model.MovieUIModel;
+import com.taurus.androidtest.categorydetail.movie.adapter.viewholder.MovieDetailViewHolder;
 
 import java.util.List;
 
@@ -26,6 +26,6 @@ public class MovieDetailAdapterDelegate extends BaseAdapterDelegate<MovieUIModel
 
     @Override
     protected void onBindViewHolder(@NonNull MovieUIModel item, @NonNull MovieDetailViewHolder viewHolder, @NonNull List<Object> payloads) {
-
+        viewHolder.bind(item);
     }
 }

@@ -1,20 +1,31 @@
 package com.taurus.androidtest.categorydetail.character;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.NestedScrollView;
 import android.view.View;
 
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.baseadapter.model.GenericItem;
 import com.taurus.androidtest.core.BaseFragment;
+import com.taurus.androidtest.customview.EndlessRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
 
 public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, CharacterDetailPresenter>
         implements CharacterDetailView {
 
     private static final String EXTRA_CATEGORY_DETAIL = "category_detail";
+
+    @BindView(R.id.characterRecyclerView)
+    EndlessRecyclerView comicsRecyclerView;
+
+    @BindView(R.id.emptyView)
+    NestedScrollView emptyView;
 
     private List<GenericItem> detailList;
 
@@ -34,6 +45,7 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
         return R.layout.fragment_character_detail;
     }
 
+    @NonNull
     @Override
     public CharacterDetailPresenter createPresenter() {
         return new CharacterDetailPresenter();
@@ -53,6 +65,16 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
         if (args == null) return;
         detailList = args.getParcelableArrayList(CharacterDetailFragment.EXTRA_CATEGORY_DETAIL);
 
+    }
+
+    @Override
+    public void showEmptyView() {
+        emptyView.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideEmptyView() {
+        emptyView.setVisibility(View.GONE);
     }
 
 }

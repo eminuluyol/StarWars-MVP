@@ -40,7 +40,7 @@ public class CategoryDetailActivity extends BaseSimpleActivity {
     public static Intent newIntent(Context context, List<GenericItem> detailList, int categoryType) {
 
         Intent intent = new Intent(context, CategoryDetailActivity.class);
-        intent.putParcelableArrayListExtra(CategoryDetailActivity.EXTRA_CATEGORY_DETAIL, new ArrayList<>(detailList));
+        intent.putParcelableArrayListExtra(CategoryDetailActivity.EXTRA_CATEGORY_DETAIL, (ArrayList<GenericItem>) detailList);
         intent.putExtra(CategoryDetailActivity.EXTRA_CATEGORY_TYPE, categoryType);
 
         return intent;
@@ -72,14 +72,11 @@ public class CategoryDetailActivity extends BaseSimpleActivity {
         switch (categoryType) {
 
             case CATEGORY_MOVIES:
-                MovieDetailFragment.newInstance(detailList);
-                break;
+                return MovieDetailFragment.newInstance(detailList);
             case CATEGORY_PLANETS:
-                PlanetDetailFragment.newInstance(detailList);
-                break;
+                return PlanetDetailFragment.newInstance(detailList);
             case CATEGORY_CHARACTERS:
-                CharacterDetailFragment.newInstance(detailList);
-                break;
+               return  CharacterDetailFragment.newInstance(detailList);
 
         }
 

@@ -1,12 +1,15 @@
 package com.taurus.androidtest.categorydetail.movie.adapter.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.taurus.androidtest.baseadapter.model.GenericItem;
 import com.taurus.androidtest.network.model.movie.Movie;
 import com.taurus.androidtest.util.ListConverter;
 
 import java.util.List;
 
-public class MovieUIModel extends GenericItem {
+public class MovieUIModel extends GenericItem implements Parcelable {
 
     private String title;
 
@@ -25,6 +28,46 @@ public class MovieUIModel extends GenericItem {
     public MovieUIModel() {
     }
 
+    protected MovieUIModel(Parcel in) {
+        super(in);
+        title = in.readString();
+        episodeId = in.readInt();
+        openingCrawl = in.readString();
+        director = in.readString();
+        producer = in.readString();
+        releaseDate = in.readString();
+        id = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(title);
+        dest.writeInt(episodeId);
+        dest.writeString(openingCrawl);
+        dest.writeString(director);
+        dest.writeString(producer);
+        dest.writeString(releaseDate);
+        dest.writeString(id);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<MovieUIModel> CREATOR = new Creator<MovieUIModel>() {
+        @Override
+        public MovieUIModel createFromParcel(Parcel in) {
+            return new MovieUIModel(in);
+        }
+
+        @Override
+        public MovieUIModel[] newArray(int size) {
+            return new MovieUIModel[size];
+        }
+    };
+
     public static List<MovieUIModel> createList(List<Movie> movieList) {
         return ListConverter.convert(movieList, item -> create(item));
     }
@@ -33,13 +76,13 @@ public class MovieUIModel extends GenericItem {
 
         final MovieUIModel model = new MovieUIModel();
 
-        model.setTitle(model.getTitle());
-        model.setEpisodeId(model.getEpisodeId());
-        model.setOpeningCrawl(model.getOpeningCrawl());
-        model.setDirector(model.getDirector());
-        model.setProducer(model.getProducer());
-        model.setReleaseDate(model.getReleaseDate());
-        model.setId(model.getId());
+        model.setTitle(item.getTitle());
+        model.setEpisodeId(item.getEpisodeId());
+        model.setOpeningCrawl(item.getOpeningCrawl());
+        model.setDirector(item.getDirector());
+        model.setProducer(item.getProducer());
+        model.setReleaseDate(item.getReleaseDate());
+        model.setId(item.getId());
 
         return model;
     }
@@ -98,5 +141,10 @@ public class MovieUIModel extends GenericItem {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public int getItemRecognitionFiled() {
+        return Integer.parseInt(id);
     }
 }

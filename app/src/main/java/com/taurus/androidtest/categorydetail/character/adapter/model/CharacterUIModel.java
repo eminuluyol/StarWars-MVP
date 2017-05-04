@@ -85,15 +85,15 @@ public class CharacterUIModel extends GenericItem implements Parcelable {
 
         final CharacterUIModel model = new CharacterUIModel();
 
-        model.setName(model.getName());
-        model.setHeight(model.getHeight());
-        model.setMass(model.getMass());
-        model.setHairColor(model.getHairColor());
-        model.setSkinColor(model.getSkinColor());
-        model.setEyeColor(model.getEyeColor());
-        model.setBirthYear(model.getBirthYear());
-        model.setGender(model.getGender());
-        model.setId(model.getId());
+        model.setName(item.getName());
+        model.setHeight(item.getHeight());
+        model.setMass(item.getMass());
+        model.setHairColor(item.getHairColor());
+        model.setSkinColor(item.getSkinColor());
+        model.setEyeColor(item.getEyeColor());
+        model.setBirthYear(item.getBirthYear());
+        model.setGender(item.getGender());
+        model.setId(item.getId());
 
         return model;
     }
@@ -168,5 +168,10 @@ public class CharacterUIModel extends GenericItem implements Parcelable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public int getItemRecognitionFiled() {
+        return Integer.parseInt(id);
     }
 }
