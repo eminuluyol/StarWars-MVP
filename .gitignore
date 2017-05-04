@@ -1,7 +1,9 @@
    # Android Studio
    .idea/
    *.iml
+   .idea/workspace.xml
    **/.idea/workspace.xml
+   .iws
    **/.idea/tasks.xml
 
    # Mac File Store
