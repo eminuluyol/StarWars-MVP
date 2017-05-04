@@ -6,7 +6,7 @@ import com.taurus.androidtest.baseadapter.model.GenericItem;
 import com.taurus.androidtest.category.CategoryActivity;
 import com.taurus.androidtest.categorydetail.CategoryDetailActivity;
 import com.taurus.androidtest.core.injection.ActivityScope;
-import com.taurus.androidtest.util.databasehandler.CategoryDatabaseModel;
+import com.taurus.androidtest.util.databasehandler.model.CategoryDatabaseModel;
 
 import java.util.List;
 

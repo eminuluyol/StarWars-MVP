@@ -2,7 +2,7 @@ package com.taurus.androidtest.splash;
 
 import com.taurus.androidtest.core.BasePresenter;
 import com.taurus.androidtest.core.injection.Injector;
-import com.taurus.androidtest.util.databasehandler.CategoryDatabaseModel;
+import com.taurus.androidtest.util.databasehandler.model.CategoryDatabaseModel;
 
 import java.util.List;
 

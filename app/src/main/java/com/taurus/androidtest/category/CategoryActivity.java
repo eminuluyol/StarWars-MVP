@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.core.BaseFragment;
 import com.taurus.androidtest.core.BaseSimpleActivity;
-import com.taurus.androidtest.util.databasehandler.CategoryDatabaseModel;
+import com.taurus.androidtest.util.databasehandler.model.CategoryDatabaseModel;
 
 import java.util.ArrayList;
 import java.util.List;

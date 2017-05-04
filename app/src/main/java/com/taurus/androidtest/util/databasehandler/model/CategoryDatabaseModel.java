@@ -1,4 +1,4 @@
-package com.taurus.androidtest.util.databasehandler;
+package com.taurus.androidtest.util.databasehandler.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
