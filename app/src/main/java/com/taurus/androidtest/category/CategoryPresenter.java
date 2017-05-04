@@ -2,9 +2,9 @@ package com.taurus.androidtest.category;
 
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.baseadapter.model.GenericItem;
-import com.taurus.androidtest.categorydetail.adapter.model.CharacterUIModel;
-import com.taurus.androidtest.categorydetail.adapter.model.MovieUIModel;
-import com.taurus.androidtest.categorydetail.adapter.model.PlanetUIModel;
+import com.taurus.androidtest.categorydetail.character.adapter.model.CharacterUIModel;
+import com.taurus.androidtest.categorydetail.movie.adapter.model.MovieUIModel;
+import com.taurus.androidtest.categorydetail.planet.adapter.model.PlanetUIModel;
 import com.taurus.androidtest.core.BasePresenter;
 import com.taurus.androidtest.core.injection.Injector;
 

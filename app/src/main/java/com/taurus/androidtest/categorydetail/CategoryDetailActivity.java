@@ -9,7 +9,9 @@ import android.widget.ImageView;
 
 import com.taurus.androidtest.R;
 import com.taurus.androidtest.baseadapter.model.GenericItem;
-import com.taurus.androidtest.category.CategoryFragment;
+import com.taurus.androidtest.categorydetail.character.CharacterDetailFragment;
+import com.taurus.androidtest.categorydetail.movie.MovieDetailFragment;
+import com.taurus.androidtest.categorydetail.planet.PlanetDetailFragment;
 import com.taurus.androidtest.core.BaseFragment;
 import com.taurus.androidtest.core.BaseSimpleActivity;
 
@@ -22,6 +24,9 @@ public class CategoryDetailActivity extends BaseSimpleActivity {
 
     private static final String EXTRA_CATEGORY_DETAIL = "category_detail";
     private static final String EXTRA_CATEGORY_TYPE = "category_type";
+    private static final int CATEGORY_MOVIES = 0;
+    private static final int CATEGORY_PLANETS = 1;
+    private static final int CATEGORY_CHARACTERS = 2;
 
     @BindView(R.id.categoryDetailImageViewComicHeader)
     ImageView imageViewComicHeader;
@@ -63,7 +68,22 @@ public class CategoryDetailActivity extends BaseSimpleActivity {
     @Nullable
     @Override
     protected BaseFragment getContainedFragment() {
-        return CategoryDetailFragment.newInstance(detailList, categoryType);
+
+        switch (categoryType) {
+
+            case CATEGORY_MOVIES:
+                MovieDetailFragment.newInstance(detailList);
+                break;
+            case CATEGORY_PLANETS:
+                PlanetDetailFragment.newInstance(detailList);
+                break;
+            case CATEGORY_CHARACTERS:
+                CharacterDetailFragment.newInstance(detailList, categoryType);
+                break;
+
+        }
+
+        return null;
     }
 
     private void getBundleArgmuments() {

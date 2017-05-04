@@ -1,7 +1,7 @@
 package com.taurus.androidtest.core.injection;
 
 import com.taurus.androidtest.category.CategoryPresenter;
-import com.taurus.androidtest.categorydetail.CategoryDetailPresenter;
+import com.taurus.androidtest.categorydetail.character.CharacterDetailPresenter;
 import com.taurus.androidtest.core.NoOpPresenter;
 import com.taurus.androidtest.splash.SplashPresenter;
 
@@ -17,6 +17,6 @@ public interface ActivityComponent {
 
     void inject(CategoryPresenter categoryPresenter);
 
-    void inject(CategoryDetailPresenter categoryDetailPresenter);
+    void inject(CharacterDetailPresenter categoryDetailPresenter);
 
 }
