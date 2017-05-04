@@ -78,7 +78,7 @@ public class CategoryDetailActivity extends BaseSimpleActivity {
                 PlanetDetailFragment.newInstance(detailList);
                 break;
             case CATEGORY_CHARACTERS:
-                CharacterDetailFragment.newInstance(detailList, categoryType);
+                CharacterDetailFragment.newInstance(detailList);
                 break;
 
         }

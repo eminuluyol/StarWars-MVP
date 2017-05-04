@@ -15,16 +15,13 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
         implements CharacterDetailView {
 
     private static final String EXTRA_CATEGORY_DETAIL = "category_detail";
-    private static final String EXTRA_CATEGORY_TYPE = "category_type";
 
     private List<GenericItem> detailList;
-    private int categoryType;
 
-    public static CharacterDetailFragment newInstance(List<GenericItem> detailList, int categoryType) {
+    public static CharacterDetailFragment newInstance(List<GenericItem> detailList) {
 
         Bundle args = new Bundle();
         args.putParcelableArrayList(CharacterDetailFragment.EXTRA_CATEGORY_DETAIL, (ArrayList<GenericItem>) detailList);
-        args.putInt(CharacterDetailFragment.EXTRA_CATEGORY_TYPE, categoryType);
 
         CharacterDetailFragment fragment = new CharacterDetailFragment();
         fragment.setArguments(args);
@@ -55,7 +52,6 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
         Bundle args = getArguments();
         if (args == null) return;
         detailList = args.getParcelableArrayList(CharacterDetailFragment.EXTRA_CATEGORY_DETAIL);
-        categoryType = args.getInt(CharacterDetailFragment.EXTRA_CATEGORY_TYPE, 0);
 
     }
 
