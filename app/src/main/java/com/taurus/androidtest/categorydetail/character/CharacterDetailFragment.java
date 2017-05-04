@@ -68,6 +68,7 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
             charactersListAdapter = RecyclerAdapter.with(new CharacterDetailAdapterDelegate());
             charactersRecyclerView.setAdapter(charactersListAdapter);
             charactersListAdapter.swapItems(detailList);
+            charactersRecyclerView.setLoading(false);
 
         }
 
@@ -76,6 +77,7 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
     private void getBundleFromArgs() {
 
         Bundle args = getArguments();
+
         if (args == null) return;
         detailList = args.getParcelableArrayList(CharacterDetailFragment.EXTRA_CATEGORY_DETAIL);
 
@@ -92,8 +94,17 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
     }
 
     @Override
+    public void showGetCharacterDataSuccess(List<GenericItem> detailList) {
+
+        charactersRecyclerView.setLoading(false);
+        charactersListAdapter.addAll(detailList);
+
+    }
+
+    @Override
     public void onEndReached() {
 
+        charactersRecyclerView.setLoading(true);
         getPresenter().onCharacterListRequested();
 
     }

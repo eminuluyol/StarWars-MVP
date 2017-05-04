@@ -55,4 +55,7 @@ public class CharacterWrapper {
         this.results = results;
     }
 
+    public boolean hasNext() {
+        return (next != 0);
+    }
 }

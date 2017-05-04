@@ -92,6 +92,14 @@ public class EndlessRecyclerView extends RecyclerView {
                     totalItemCount = layoutManager.getItemCount();
                     firstVisibleItem = layoutManager.findFirstVisibleItemPosition();
 
+//                    Log.i("EndVisibleItemCount", "  " + visibleItemCount);
+//                    Log.i("EndTotalItemCount", "  " + totalItemCount);
+//                    Log.i("EndFirstVisibleItem", "  " + firstVisibleItem);
+//                    Log.i("EndLoading", "  " + !loading);
+//                    boolean result = (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold);
+//                    Log.i("EndResult", "  " + result);
+//                    Log.i("End", "----------------");
+
                     if (!loading && (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold)) {
                         // End has been reached
                         if (onEndReachedListener != null) {
