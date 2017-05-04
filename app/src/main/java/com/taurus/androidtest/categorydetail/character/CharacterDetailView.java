@@ -12,4 +12,6 @@ public interface CharacterDetailView extends BaseView {
     void hideEmptyView();
 
     void showGetCharacterDataSuccess(List<GenericItem> detailList);
+
+    void showError();
 }

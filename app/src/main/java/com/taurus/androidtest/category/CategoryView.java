@@ -7,4 +7,6 @@ public interface CategoryView extends BaseView {
     void showEmptyView();
 
     void hideEmptyView();
+
+    void hideRecyclerView();
 }

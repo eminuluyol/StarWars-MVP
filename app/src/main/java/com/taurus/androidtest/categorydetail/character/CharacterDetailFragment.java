@@ -102,6 +102,12 @@ public class CharacterDetailFragment extends BaseFragment<CharacterDetailView, C
     }
 
     @Override
+    public void showError() {
+
+        showError(getString(R.string.error));
+    }
+
+    @Override
     public void onEndReached() {
 
         charactersRecyclerView.setLoading(true);

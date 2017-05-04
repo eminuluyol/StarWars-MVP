@@ -97,6 +97,11 @@ public class CategoryFragment extends BaseFragment<CategoryView, CategoryPresent
         emptyView.setVisibility(View.GONE);
     }
 
+    @Override
+    public void hideRecyclerView() {
+        categoryRecyclerView.setVisibility(View.GONE);
+    }
+
 
     @Override
     public void onItemClick(int position) {

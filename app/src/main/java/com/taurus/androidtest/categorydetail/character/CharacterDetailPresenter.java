@@ -64,5 +64,7 @@ public class CharacterDetailPresenter extends BasePresenter<CharacterDetailView>
 
     private void handleError(Throwable throwable) {
 
+        getView().showError();
+
     }
 }

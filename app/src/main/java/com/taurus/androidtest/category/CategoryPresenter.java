@@ -138,6 +138,7 @@ public class CategoryPresenter extends BasePresenter<CategoryView> {
 
             getView().dismissProgress();
             getView().showEmptyView();
+            getView().hideRecyclerView();
 
         }
 
@@ -148,5 +149,7 @@ public class CategoryPresenter extends BasePresenter<CategoryView> {
         getNavigator().toCategoryDetailActivity(detailList, categoryType).withAnimation(R.anim.right_in, R.anim.left_out).navigate();
 
     }
+
+
 
 }
