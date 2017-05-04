@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 import com.taurus.androidtest.baseadapter.model.GenericItem;
 import com.taurus.androidtest.network.model.character.Character;
+import com.taurus.androidtest.network.model.character.CharacterWrapper;
 import com.taurus.androidtest.util.ListConverter;
 
 import java.util.List;
@@ -76,8 +77,8 @@ public class CharacterUIModel extends GenericItem implements Parcelable {
         }
     };
 
-    public static List<CharacterUIModel> createList(List<Character> characterList) {
-        return ListConverter.convert(characterList, item -> create(item));
+    public static List<CharacterUIModel> createList(CharacterWrapper characterWrapper) {
+        return ListConverter.convert(characterWrapper.getResults(), item -> create(item));
     }
 
     private static CharacterUIModel create(Character item) {

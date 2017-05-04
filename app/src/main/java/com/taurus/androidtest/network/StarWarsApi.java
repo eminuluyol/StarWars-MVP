@@ -1,7 +1,8 @@
 package com.taurus.androidtest.network;
 
+import com.taurus.androidtest.network.model.BaseRequest;
 import com.taurus.androidtest.network.model.category.Category;
-import com.taurus.androidtest.network.model.character.Character;
+import com.taurus.androidtest.network.model.character.CharacterWrapper;
 import com.taurus.androidtest.network.model.movie.Movie;
 import com.taurus.androidtest.network.model.planet.Planet;
 
@@ -17,6 +18,6 @@ public interface StarWarsApi {
 
     Observable<List<Planet>> getStarWarsPlanets();
 
-    Observable<List<Character>> getStarWarsCharacters();
+    Observable<CharacterWrapper> getStarWarsCharacters(BaseRequest request);
 
 }

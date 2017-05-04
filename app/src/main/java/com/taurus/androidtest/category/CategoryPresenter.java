@@ -7,6 +7,7 @@ import com.taurus.androidtest.categorydetail.movie.adapter.model.MovieUIModel;
 import com.taurus.androidtest.categorydetail.planet.adapter.model.PlanetUIModel;
 import com.taurus.androidtest.core.BasePresenter;
 import com.taurus.androidtest.core.injection.Injector;
+import com.taurus.androidtest.network.model.BaseRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,9 +102,11 @@ public class CategoryPresenter extends BasePresenter<CategoryView> {
 
     void onCharacterListRequested(int categoryType) {
 
+        BaseRequest request = new BaseRequest(1);
+
         this.categoryType = categoryType;
 
-        compositeDisposable.add(getApi().getStarWarsCharacters()
+        compositeDisposable.add(getApi().getStarWarsCharacters(request)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(CharacterUIModel::createList)

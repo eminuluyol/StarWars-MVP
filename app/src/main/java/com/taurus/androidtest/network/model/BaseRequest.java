@@ -2,17 +2,17 @@ package com.taurus.androidtest.network.model;
 
 public class BaseRequest {
 
-    private int type;
+    private int page;
 
-    public BaseRequest(int type) {
-        this.type = type;
+    public BaseRequest(int page) {
+        this.page = page;
     }
 
-    public int getType() {
-        return type;
+    public int getPage() {
+        return page;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setPage(int page) {
+        this.page = page;
     }
 }

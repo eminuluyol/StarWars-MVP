@@ -3,7 +3,7 @@ package com.taurus.androidtest.network.retrofit;
 import com.taurus.androidtest.network.StarWarsApi;
 import com.taurus.androidtest.network.model.BaseRequest;
 import com.taurus.androidtest.network.model.category.Category;
-import com.taurus.androidtest.network.model.character.Character;
+import com.taurus.androidtest.network.model.character.CharacterWrapper;
 import com.taurus.androidtest.network.model.movie.Movie;
 import com.taurus.androidtest.network.model.planet.Planet;
 
@@ -38,10 +38,10 @@ public class RetrofitStarWarsApi implements StarWarsApi {
     }
 
     @Override
-    public Observable<List<Character>> getStarWarsCharacters() {
+    public Observable<CharacterWrapper> getStarWarsCharacters(BaseRequest request) {
 
         APIRestEndpoints endpoints = APIRestClient.getInstanceRx().create(APIRestEndpoints.class);
-        return endpoints.getStarWarsCharacters();
+        return endpoints.getStarWarsCharacters(request.getPage());
 
     }
 }
