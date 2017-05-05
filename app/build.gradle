@@ -13,6 +13,20 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+
+        debug {
+            storeFile file("debug.keystore")
+        }
+
+        release {
+            keyAlias 'android'
+            keyPassword 'android'
+            storePassword 'android'
+            storeFile file('release.jks')
+        }
+    }
+
     buildTypes {
 
         debug {
